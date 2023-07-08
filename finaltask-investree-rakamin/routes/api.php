@@ -22,19 +22,7 @@ use App\Http\Controllers\API\PostController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
-Route::middleware('auth:api')->group(function () {
+Route::middleware('auth:api')->prefix('v1')->group(function () {
     ROute::apiResource('post', PostController::class);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
-// Route::resource('article', ArticleController::class)->middleware(['auth:passport']);
-
-// Route::group(['middleware' => ['auth:Passport']], function () {
-//     // route::get('/profile', [AuthController::class, 'profile']);
-//     route::post('/logout', [AuthController::class, 'logout']);
-//     Route::resource('article', ArticleController::class);
-// });
-
-// Route::middleware('auth:api')->group(function(){
-//     route::get('/profile', [AuthController::class, 'profile']);
-//     route::get('/logout', [AuthController::class, 'logout']);
-// });
