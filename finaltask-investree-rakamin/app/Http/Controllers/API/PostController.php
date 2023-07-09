@@ -25,7 +25,7 @@ class PostController extends Controller
             'content' => $request->content,
             'image' => $request->image,
             'user_id' => $id,
-            'categories_id' =>$request->categories_id
+            'category_id' =>$request->category_id
         ]);
         return response()->json([
             'status' => true,
@@ -63,7 +63,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->image = $request->image;
         $post->user_id = $id_login;
-        $post->categories_id = $request->categories_id;
+        $post->category_id = $request->category_id;
         $post->save();
 
         return response()->json([

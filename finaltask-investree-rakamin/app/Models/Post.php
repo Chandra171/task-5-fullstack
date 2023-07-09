@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,9 +12,9 @@ class Post extends Model
 
 
     // protected $table = 'articles';
-    protected $guarded = [];
-    protected $table = 'articles';
-    protected $fillable = ['title', 'content', 'image', 'user_id', 'categories_id'];
+    // protected $guarded = [];
+    protected $table = 'article';
+    protected $fillable = ['title', 'content', 'image', 'user_id', 'category_id'];
 
     public function users()
     {
