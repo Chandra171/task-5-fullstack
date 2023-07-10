@@ -41,7 +41,7 @@
             <div class = 'text-center'>
                 <img src="{{asset('images/'. $article->image)}}" style=" width: 50vh; height: 300px" alt="">
             </div>
-    <p class="text-left badge badge-warning">Kategori : {{$article->category->name}}</p>
+    <p class="text-left badge badge-primary">Kategori : {{$article->category->name}}</p>
 
     
     <p class="text-left text-dark">{{$article->content}}</p>

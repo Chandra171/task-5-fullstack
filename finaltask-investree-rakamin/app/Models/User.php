@@ -19,11 +19,27 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     protected $guarded = ['$id'];
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
+
+    public function article()
+    {
+        return $this->hasMany(Article::class, 'article_id');
+    }    
+
+    public function category()
+    {
+        return $this->hasMany(Category::class, 'category_id');
+    }    
+    public function post()
+    {
+        return $this->hasMany(Post::class, 'article_id');
+    }  
 
     /**
      * The attributes that should be hidden for serialization.
@@ -44,13 +60,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function article()
-    {
-        return $this->hasMany(Article::class, 'article_id');
-    }    
-
-    public function category()
-    {
-        return $this->hasMany(Category::class, 'category_id');
-    }    
+   
 }

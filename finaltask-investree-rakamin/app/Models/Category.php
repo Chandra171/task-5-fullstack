@@ -8,6 +8,9 @@ use App\Models\User;
 
 class Category extends Model
 {
+
+    use HasFactory;
+    protected $guarded = [];
     protected $table = 'category';
     protected $fillable = ['name', 'user_id'];
 
@@ -15,6 +18,11 @@ class Category extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }    
+
+    public function post()
+    {
+        return $this->hasMany(Post::class);
+    }
 
     // public function article()
     // {

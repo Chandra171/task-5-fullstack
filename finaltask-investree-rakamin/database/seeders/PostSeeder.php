@@ -2,13 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
-class UserSeeders extends Seeder
+class PostSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,11 +15,13 @@ class UserSeeders extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('article')->insert([
             'id' => 1,
-            'name' => 'test',
-            'email' => 'test@gmail.com',
-            'password' => Hash::make('test'),
+            'title' => 'tes artikel',
+            'content' => 'tes konten artikel',
+            'image' => 'tes iamge artikel',
+            'user_id' => 1,
+            'category_id' => 1
         ]);
     }
 }

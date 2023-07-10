@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-
+ use HasFactory;
 
     // protected $table = 'articles';
-    // protected $guarded = [];
+    protected $guarded = ['$id'];
     protected $table = 'article';
     protected $fillable = ['title', 'content', 'image', 'user_id', 'category_id'];
 

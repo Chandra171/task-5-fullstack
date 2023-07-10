@@ -12,7 +12,7 @@ class Article extends Model
 
 
     // protected $table = 'articles';
-    // protected $guarded = [];
+    protected $guarded = [];
     protected $table = 'article';
     protected $fillable = ['title', 'content', 'image', 'user_id', 'category_id'];
 
